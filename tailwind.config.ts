@@ -18,15 +18,21 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				title: ['Cinzel', 'serif'],
+				body: ['Crimson Text', 'serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				parchment: 'hsl(var(--parchment))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					glow: 'hsl(var(--primary-glow))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -63,6 +69,19 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				}
 			},
+			backgroundImage: {
+				'gradient-parchment': 'var(--gradient-parchment)',
+				'gradient-crimson': 'var(--gradient-crimson)',
+				'gradient-gold': 'var(--gradient-gold)',
+			},
+			boxShadow: {
+				'mystical': 'var(--shadow-mystical)',
+				'parchment': 'var(--shadow-parchment)',
+				'glow': 'var(--shadow-glow)',
+			},
+			animation: {
+				'glow-pulse': 'glow-pulse 2s ease-in-out infinite alternate',
+			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
@@ -84,11 +103,20 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'glow-pulse': {
+					'0%': {
+						boxShadow: '0 0 20px hsl(var(--primary) / 0.3)',
+					},
+					'100%': {
+						boxShadow: '0 0 30px hsl(var(--primary) / 0.6), 0 0 40px hsl(var(--accent) / 0.2)',
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'glow-pulse': 'glow-pulse 2s ease-in-out infinite alternate',
 			}
 		}
 	},
